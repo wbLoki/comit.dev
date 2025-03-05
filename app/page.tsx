@@ -5,9 +5,7 @@ import {
     Stats,
     Business,
     Billing,
-    CardDeal,
     Testimonials,
-    Clients,
     CTA,
     Footer,
     Navbar,
@@ -36,10 +34,8 @@ const Home: React.FC = () => {
                     <div className={`${styles.boxWidth}`}>
                         {/* <Stats /> */}
                         <Business />
-                        <Billing />
-                        <CardDeal />
-                        <Testimonials />
-                        <Clients />
+                        {/* <Billing /> */}
+                        {/* <Testimonials /> */}
                         <CTA />
                         <Footer />
                     </div>
