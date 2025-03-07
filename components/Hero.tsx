@@ -1,5 +1,5 @@
 import styles from '@/styles/style';
-import { discount, terminal } from '@/public/assets';
+import { terminal } from '@/public/assets';
 import GetStarted from './GetStarted';
 import Image from 'next/image';
 
