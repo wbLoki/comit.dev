@@ -1,17 +1,16 @@
-import "@/styles/globals.css";
+import '@/styles/globals.css';
 export const metadata = {
-  title: "HooBank",
-  description: "Hoobank is an Modern Landing Page built with Next JS and Typescript",
+    title: 'Comit',
+    description:
+        'an AI-powered tool for generating meaningful commit messages and providing coding assistance',
 };
 
-const RootLayout = ({ children }: { children: React.ReactNode; }) => {
-  return (
-    <html lang="en">
-      <body>
-        {children}
-      </body>
-    </html>
-  );
+const RootLayout = ({ children }: { children: React.ReactNode }) => {
+    return (
+        <html lang='en'>
+            <body>{children}</body>
+        </html>
+    );
 };
 
 export default RootLayout;

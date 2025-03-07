@@ -2,10 +2,8 @@
 import styles from '@/styles/style';
 import {
     Hero,
-    Stats,
+    // Stats,
     Business,
-    Billing,
-    Testimonials,
     CTA,
     Footer,
     Navbar,
@@ -34,8 +32,6 @@ const Home: React.FC = () => {
                     <div className={`${styles.boxWidth}`}>
                         {/* <Stats /> */}
                         <Business />
-                        {/* <Billing /> */}
-                        {/* <Testimonials /> */}
                         <CTA />
                         <Footer />
                     </div>

@@ -21,7 +21,7 @@ const FeaturesCard: React.FC<FeatredCardProps> = ({
             <Image
                 src={icon}
                 alt='icon'
-                className='w-[50%] h-[50%] object-contain fill-[#0FF5FF]'
+                className='w-[50%] h-[50%] object-contain fill-orange'
             />
         </div>
         <div className='flex-1 flex flex-col ml-3'>
