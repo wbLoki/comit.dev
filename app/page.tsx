@@ -4,7 +4,7 @@ import {
     Hero,
     // Stats,
     Business,
-    CTA,
+    // CTA,
     Footer,
     Navbar,
 } from '@/components';
@@ -32,7 +32,7 @@ const Home: React.FC = () => {
                     <div className={`${styles.boxWidth}`}>
                         {/* <Stats /> */}
                         <Business />
-                        <CTA />
+                        {/* <CTA /> */}
                         <Footer />
                     </div>
                 </div>
