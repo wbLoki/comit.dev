@@ -4,6 +4,7 @@ import branch from './icons/Branch.svg';
 import close from './close.svg';
 import commit from './icons/Commit.svg';
 import logo from './icons/logo.png';
+import darkLogo from './icons/logo-dark.png';
 import terminal from './terminal.png';
 import menu from './menu.svg';
 import facebook from './facebook.svg';
@@ -23,6 +24,7 @@ export {
     instagram,
     linkedin,
     logo,
+    darkLogo,
     menu,
     terminal,
     twitter,

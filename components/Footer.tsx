@@ -1,5 +1,5 @@
 import styles from '@/styles/style';
-import { logo } from '@/public/assets';
+import { darkLogo } from '@/public/assets';
 import { footerLink, socialMedia } from '@/constants';
 import Image from 'next/image';
 const Footer: React.FC = () => (
@@ -7,7 +7,7 @@ const Footer: React.FC = () => (
         <div className={`${styles.flexCenter} mb-8 w-full`}>
             <div className='flex-1 flex flex-col justify-start mr-10'>
                 <Image
-                    src={logo}
+                    src={darkLogo}
                     alt='comit.dev'
                     className='w-min h-[72px] object-contain'
                 />
