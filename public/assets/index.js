@@ -10,6 +10,7 @@ import facebook from './facebook.svg';
 import instagram from './instagram.svg';
 import linkedin from './linkedin.svg';
 import twitter from './twitter.svg';
+import github from './github.svg';
 
 export {
     Ai,
@@ -18,6 +19,7 @@ export {
     close,
     commit,
     facebook,
+    github,
     instagram,
     linkedin,
     logo,

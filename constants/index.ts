@@ -6,6 +6,7 @@ import {
     branch,
     Ai,
     commit,
+    github,
 } from '@/public/assets';
 import { Feature } from '@types';
 
@@ -101,5 +102,10 @@ export const socialMedia = [
         id: 'social-media-4',
         icon: linkedin,
         link: 'https://www.linkedin.com/',
+    },
+    {
+        id: 'social-media-5',
+        icon: github,
+        link: 'https://www.github.com/',
     },
 ];
