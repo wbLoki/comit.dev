@@ -14,10 +14,12 @@ export const navLinks = [
     {
         id: 'home',
         title: 'Home',
+        href: '/',
     },
     {
         id: 'docs',
         title: 'Docs',
+        href: '/docs',
     },
 ];
 

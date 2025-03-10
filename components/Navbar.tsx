@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { close, darkLogo, menu } from '@/public/assets';
 import { navLinks } from '@/constants';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const Navbar: React.FC = () => {
     const [toggle, setToggle] = useState(false);
@@ -11,14 +12,15 @@ const Navbar: React.FC = () => {
             <Image src={darkLogo} alt='comit.dev' width={124} height={32} />
             <ul className='list-none sm:flex hidden justify-end items-center flex-1'>
                 {navLinks.map((nav, index) => (
-                    <li
+                    <Link
                         key={nav.id}
                         className={`font-poppins font-normal cursor-pointer text-[16px] text-white ${
                             index === navLinks.length - 1 ? 'mr-0' : 'mr-10'
                         }`}
+                        href={nav.href}
                     >
-                        <a href={`#${nav.id}`}>{nav.title}</a>
-                    </li>
+                        {nav.title}
+                    </Link>
                 ))}
             </ul>
             <div className='sm:hidden flex flex-1 justify-end items-center'>
