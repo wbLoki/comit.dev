@@ -5,7 +5,7 @@ import { navLinks } from '@/constants';
 import Image from 'next/image';
 import Link from 'next/link';
 
-const Navbar: React.FC = () => {
+export const Navbar: React.FC = () => {
     const [toggle, setToggle] = useState(false);
     return (
         <nav className='w-full flex py-6 justify-between items-center navbar'>
@@ -55,5 +55,3 @@ const Navbar: React.FC = () => {
         </nav>
     );
 };
-
-export default Navbar;

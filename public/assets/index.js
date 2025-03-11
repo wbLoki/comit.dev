@@ -5,6 +5,7 @@ import close from './close.svg';
 import commit from './icons/Commit.svg';
 import logo from './icons/logo.png';
 import darkLogo from './icons/logo-dark.png';
+import mobileLogo from './icons/logo-mobile-dark.png';
 import terminal from './terminal.png';
 import menu from './menu.svg';
 import facebook from './facebook.svg';
@@ -25,6 +26,7 @@ export {
     linkedin,
     logo,
     darkLogo,
+    mobileLogo,
     menu,
     terminal,
     twitter,
