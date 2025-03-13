@@ -13,7 +13,7 @@ const Home: React.FC = () => {
                     features and API.
                 </h3>
             </div>
-            <div className='flex flex-col gap-4'>
+            <div id='features' className='flex flex-col gap-4'>
                 <h2 className='text-3xl'>Features</h2>
                 <ul className='list-disc ml-8'>
                     <li>Task tracking</li>

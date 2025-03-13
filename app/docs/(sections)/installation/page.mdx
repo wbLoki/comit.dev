@@ -1,102 +1,114 @@
+import CodeSnippet from '@/components/Code';
+
 # Getting Started
 
-Comit is an app that helps you stay accountable with your tasks. 
+Comit is an app that helps you stay accountable with your tasks.
+
 <p>This documentation will guide you through the features and API.</p>
 
 ## Installation
+
 Download Executable :
 
-<div className="overflow-x-auto max-w-lg">
-  <table className="min-w-full border border-card-500 rounded-lg">
-    <thead className="bg-card">
-      <tr>
-        <th className="px-4 py-2 text-left border-b">System</th>
-        <th className="px-4 py-2 text-left border-b">Executable</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr className="border-b">
-        <td className="px-4 py-2">
-          <a href="https://github.com/issamoxix/Comit/releases">MacOS</a>
-        </td>
-        <td className="px-4 py-2">
-          <a href="https://github.com/issamoxix/Comit/releases">comit</a>
-        </td>
-      </tr>
-      <tr className="border-b">
-        <td className="px-4 py-2">
-          <a href="https://github.com/issamoxix/Comit/releases">Windows</a>
-        </td>
-        <td className="px-4 py-2">
-          <a href="https://github.com/issamoxix/Comit/releases">comit.exe</a>
-        </td>
-      </tr>
-      <tr>
-        <td className="px-4 py-2">
-          <a href="https://github.com/issamoxix/Comit/releases">Linux</a>
-        </td>
-        <td className="px-4 py-2">
-          <a href="https://github.com/issamoxix/Comit/releases">comitl</a>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+<div className='overflow-x-auto max-w-lg'>
+    <table className='min-w-full border border-card-500 rounded-lg'>
+        <thead className='bg-card'>
+            <tr>
+                <th className='px-4 py-2 text-left border-b'>System</th>
+                <th className='px-4 py-2 text-left border-b'>Executable</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr className='border-b'>
+                <td className='px-4 py-2'>
+                    <a href='https://github.com/issamoxix/Comit/releases'>
+                        MacOS
+                    </a>
+                </td>
+                <td className='px-4 py-2'>
+                    <a href='https://github.com/issamoxix/Comit/releases'>
+                        comit
+                    </a>
+                </td>
+            </tr>
+            <tr className='border-b'>
+                <td className='px-4 py-2'>
+                    <a href='https://github.com/issamoxix/Comit/releases'>
+                        Windows
+                    </a>
+                </td>
+                <td className='px-4 py-2'>
+                    <a href='https://github.com/issamoxix/Comit/releases'>
+                        comit.exe
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td className='px-4 py-2'>
+                    <a href='https://github.com/issamoxix/Comit/releases'>
+                        Linux
+                    </a>
+                </td>
+                <td className='px-4 py-2'>
+                    <a href='https://github.com/issamoxix/Comit/releases'>
+                        comitl
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </div>
 
 <p>Add the executable to the path, to test run the following command </p>
 
-```bash
-comit --version
-```
+<CodeSnippet code='comit --version' />
+
 ---
-Usage
----
+
+## Usage
+
 ### Generate commit message
+
 To generate a commit message, stage your changes and run the following command:
 
-```bash
-comit
-```
-you will be prompted to select a commit message 
+<CodeSnippet code='comit' hasCopy />
 
-```bash
-Use the arrow keys to navigate: ↓ ↑ → ← 
+you will be prompted to select a commit message
+
+<CodeSnippet
+    code={`Use the arrow keys to navigate: ↓ ↑ → ←
 ? Select commit message:
   > Refresh
-    feat: add pagination support to /users endpoint  
-    fix: resolve 500 error when POST /login is called without payload  
-    chore: refactor API route handlers for better modularity  
-    docs: update API reference with new pagination and auth examples
-```
+    feat: add pagination support to /users endpoint
+    fix: resolve 500 error when POST /login is called without payload
+    chore: refactor API route handlers for better modularity
+    docs: update API reference with new pagination and auth examples`}
+/>
 
-### Chat live with you favorite AI assistant ***for now only openAI is supported***
+### Chat live with you favorite AI assistant **_for now only openAI is supported_**
+
 To chat live with you favorite AI assistant, run the following command:
 
-```bash
-comit --live
-```
+<CodeSnippet code='comit --live' hasCopy />
+
 you will be prompted to chat with your favorite AI assistant and maintain a conversation
 
-```bash
-> give a function that returns the sum of two numbers in python
+<CodeSnippet code='> give a function that returns the sum of two numbers in python
 
 def sum_two_numbers(a, b):
-    return a + b
+return a + b
 
-> now in rust 
-fn sum(a: i32, b: i32) -> i32 {
+> now in rust
+> fn sum(a: i32, b: i32) -> i32 {
+
     a + b
-}
-```
+
+}' />
 
 ### You can also just ask a question to chatGPT
 
-```bash
-comit -c "what is the meaning of life"
-```
+<CodeSnippet code='comit -c "what is the meaning of life"' hasCopy />
 
 ### For more commands run the following command
 
-```bash
-comit --help
-```
+<CodeSnippet code='comit --help' hasCopy />
