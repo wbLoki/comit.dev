@@ -9,22 +9,18 @@ const Home: React.FC = () => {
         <>
             <div className='w-full overflow-hidden'>
                 <div className='flex flex-col min-h-screen'>
-                    <div className={`${styles.paddingX} ${styles.flexCenter}`}>
-                        <div className={`${styles.boxWidth}`}>
-                            <Navbar />
-                        </div>
-                    </div>
-                    <div className={`flex-1 items-center ${styles.flexCenter}`}>
-                        <div className={`${styles.boxWidth}`}>
+                    {/* Hero Section */}
+                    <div className='flex-1 flex items-center justify-center bg-transparent'>
+                        <div className='max-w-7xl w-full'>
                             <Hero />
                         </div>
                     </div>
                 </div>
-                <div className={`${styles.paddingX} ${styles.flexStart}`}>
-                    <div className={`${styles.boxWidth}`}>
-                        {/* <Stats /> */}
+
+                {/* Other Sections */}
+                <div className='px-6 flex justify-start'>
+                    <div className='max-w-7xl w-full'>
                         <Business />
-                        {/* <CTA /> */}
                         <Footer />
                     </div>
                 </div>
