@@ -3,23 +3,27 @@ import { useState } from 'react';
 import { close, darkLogo, menu } from '@/public/assets';
 import { navLinks } from '@/constants';
 import Image from 'next/image';
+import Link from 'next/link';
+import { Button } from './ui/button';
 
-const Navbar: React.FC = () => {
+export const Navbar: React.FC = () => {
     const [toggle, setToggle] = useState(false);
     return (
         <nav className='w-full flex py-6 justify-between items-center navbar'>
             <Image src={darkLogo} alt='comit.dev' width={124} height={32} />
             <ul className='list-none sm:flex hidden justify-end items-center flex-1'>
                 {navLinks.map((nav, index) => (
-                    <li
+                    <Link
                         key={nav.id}
-                        className={`font-poppins font-normal cursor-pointer text-[16px] text-white ${
-                            index === navLinks.length - 1 ? 'mr-0' : 'mr-10'
-                        }`}
+                        className='font-poppins font-normal cursor-pointer text-[16px] text-primary mr-10'
+                        href={nav.href}
                     >
-                        <a href={`#${nav.id}`}>{nav.title}</a>
-                    </li>
+                        {nav.title}
+                    </Link>
                 ))}
+                <button className='py-2 px-6 bg-orange font-poppins font-medium text-[18px] text-primary outline-hidden rounded-[10px] hover:translate-x-2  transition-all ease-linear cursor-pointer'>
+                    <Link href='/login'>Login</Link>
+                </button>
             </ul>
             <div className='sm:hidden flex flex-1 justify-end items-center'>
                 <Image
@@ -38,20 +42,20 @@ const Navbar: React.FC = () => {
                         {navLinks.map((nav, index) => (
                             <li
                                 key={nav.id}
-                                className={`font-poppins font-normal cursor-pointer text-[16px] text-white ${
-                                    index === navLinks.length - 1
-                                        ? 'mr-0'
-                                        : 'mb-4'
-                                }`}
+                                className='font-poppins font-normal cursor-pointer text-[16px] text-primary mb-4'
                             >
                                 <a href={`#${nav.id}`}>{nav.title}</a>
                             </li>
                         ))}
+                        <Link
+                            href='/login'
+                            className='font-poppins font-normal cursor-pointer text-[16px] text-orange'
+                        >
+                            Login
+                        </Link>
                     </ul>
                 </div>
             </div>
         </nav>
     );
 };
-
-export default Navbar;
