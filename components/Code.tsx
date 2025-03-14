@@ -18,7 +18,11 @@ export default function CodeSnippet({
     };
 
     return (
-        <div className='relative bg-input p-4 rounded-[0.5rem] flex items-center'>
+        <div
+            className={`relative bg-input p-4 py-${
+                hasCopy ? '2' : '4'
+            } rounded-[0.5rem] flex items-center`}
+        >
             <pre className='font-mono text-sm whitespace-pre-wrap'>
                 {code.split('\n').map((line, index) => (
                     <span key={index}>
@@ -30,7 +34,7 @@ export default function CodeSnippet({
             {hasCopy && (
                 <button
                     onClick={handleCopy}
-                    className='ml-auto p-2 rounded-lg hover:bg-gray-700 transition'
+                    className='ml-auto p-2 hover:bg-card/70 transition rounded-[0.25rem] cursor-pointer'
                 >
                     {copied ? (
                         <ClipboardCheck size={18} />
