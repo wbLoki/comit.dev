@@ -40,7 +40,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                 <SidebarMenu>
                     <SidebarMenuItem>
                         <SidebarMenuButton size='lg' asChild>
-                            <Link href='#' className='flex-1 flex'>
+                            <Link href='#' className='flex-1 flex gap-4'>
                                 <div className='flex aspect-square size-8 items-center justify-center rounded-lg text-sidebar-primary-foreground'>
                                     <Image
                                         src={mobileLogo}
@@ -96,8 +96,11 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                 <SidebarMenu>
                     <SidebarMenuItem>
                         <SidebarMenuButton size='lg' asChild>
-                            <Link href='/'>
-                                <IoHome />
+                            <Link
+                                href='/'
+                                className='flex flex-1 items-center gap-4'
+                            >
+                                <IoHome size={20} />
                                 <span className='font-semibold'>
                                     Go back to Home
                                 </span>
