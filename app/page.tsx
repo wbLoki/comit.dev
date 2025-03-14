@@ -18,7 +18,7 @@ const Home: React.FC = () => {
                 </div>
 
                 {/* Other Sections */}
-                <div className='px-6 flex justify-start'>
+                <div className='px-6 flex justify-center'>
                     <div className='max-w-7xl w-full'>
                         <Business />
                         <Footer />
