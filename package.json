@@ -9,6 +9,7 @@
         "lint": "next lint"
     },
     "dependencies": {
+        "@heroui/react": "^2.7.5",
         "@mdx-js/loader": "^3.1.0",
         "@mdx-js/react": "^3.1.0",
         "@next/mdx": "^15.2.1",
@@ -17,6 +18,7 @@
         "@types/react": "18.2.8",
         "@types/react-dom": "18.2.4",
         "autoprefixer": "10.4.14",
+        "framer-motion": "^12.5.0",
         "lucide-react": "^0.482.0",
         "next": "13.4.4",
         "postcss": "8.4.24",
