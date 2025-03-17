@@ -1,4 +1,7 @@
+'use client';
+
 import '@/styles/globals.css';
+import { HeroUIProvider } from '@heroui/react';
 export const metadata = {
     title: 'Comit',
     description:
@@ -7,8 +10,10 @@ export const metadata = {
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
     return (
-        <html lang='en'>
-            <body>{children}</body>
+        <html className='dark' lang='en'>
+            <body>
+                <HeroUIProvider>{children}</HeroUIProvider>
+            </body>
         </html>
     );
 };
