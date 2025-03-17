@@ -46,7 +46,12 @@ const Business: React.FC = () => (
                 branch names, and provides coding assistance, making your
                 workflow more efficient and structured.
             </p>
-            <Button text='Get Started' animated styles='mt-10' />
+            <Button
+                text='Get Started'
+                animated
+                className='mt-10'
+                color='primary'
+            />
         </div>
         <div className={`${layout.sectionImg} flex-col items-start`}>
             {features.map((feature, index) => (

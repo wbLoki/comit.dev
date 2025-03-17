@@ -21,7 +21,7 @@ const Navbar: React.FC = () => {
                         {nav.title}
                     </Link>
                 ))}
-                <Button text='Login' />
+                <Button text='Login' size='md' />
             </ul>
             <div className='sm:hidden flex flex-1 justify-end items-center'>
                 <Image

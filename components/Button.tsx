@@ -1,5 +1,5 @@
-import { ButtonProps } from '@types';
-import { Button } from '@heroui/react';
+// import { ButtonProps } from '@types';
+import { Button, ButtonProps } from '@heroui/react';
 
 type CustomButtonProps = ButtonProps & {
     animated?: boolean;
@@ -10,15 +10,18 @@ type CustomButtonProps = ButtonProps & {
 const animationStyle = 'hover:translate-x-2 transition-all ease-linear';
 
 const StyledButton: React.FC<CustomButtonProps> = ({
-    styles,
     animated,
+    className,
+    color = 'secondary',
+    size = 'lg',
     text,
 }) => {
     return (
         <Button
-            color='secondary'
+            color={color}
             radius='md'
-            className={`${styles} ${animated ? animationStyle : ''}`}
+            size={size}
+            className={`${className} ${animated} ? ${animationStyle} : ''`}
         >
             {text}
         </Button>
