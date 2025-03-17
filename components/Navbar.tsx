@@ -40,15 +40,12 @@ const Navbar: React.FC = () => {
                         {navLinks.map((nav, index) => (
                             <li
                                 key={nav.id}
-                                className={`font-poppins font-normal cursor-pointer text-[16px] text-white ${
-                                    index === navLinks.length - 1
-                                        ? 'mr-0'
-                                        : 'mb-4'
-                                }`}
+                                className='font-poppins font-normal cursor-pointer text-[16px] text-white mb-4'
                             >
                                 <a href={`#${nav.id}`}>{nav.title}</a>
                             </li>
                         ))}
+                        <Button text='Login' size='md' />
                     </ul>
                 </div>
             </div>
