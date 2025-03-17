@@ -5,13 +5,13 @@ import Link from 'next/link';
 
 const Home: React.FC = () => {
     return (
-        <div className='bg-primary w-full overflow-hidden'>
+        <div className='w-full overflow-hidden'>
             <div className='flex flex-col min-h-screen'>
                 <div className={`${styles.paddingX} ${styles.flexCenter}`}>
                     <div className={`${styles.boxWidth}`}></div>
                 </div>
                 <div
-                    className={`bg-primary flex-1 items-center text-white ${styles.flexStart}`}
+                    className={`flex-1 items-center text-white ${styles.flexStart}`}
                 >
                     <h1 className='text-3xl font-bold'>Comit Documentation</h1>
                     <ul className='mt-4 space-y-2'>
@@ -34,9 +34,7 @@ const Home: React.FC = () => {
                     </ul>
                 </div>
             </div>
-            <div
-                className={`bg-primary ${styles.paddingX} ${styles.flexStart}`}
-            >
+            <div className={`${styles.paddingX} ${styles.flexStart}`}>
                 {/* <div className=''> */}
 
                 {/* </div> */}

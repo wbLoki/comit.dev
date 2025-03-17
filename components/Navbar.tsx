@@ -4,6 +4,7 @@ import { close, darkLogo, menu } from '@/public/assets';
 import { navLinks } from '@/constants';
 import Image from 'next/image';
 import Link from 'next/link';
+// import { Button } from '@heroui/react';
 
 const Navbar: React.FC = () => {
     const [toggle, setToggle] = useState(false);
@@ -22,6 +23,7 @@ const Navbar: React.FC = () => {
                         {nav.title}
                     </Link>
                 ))}
+                {/* <Button color='primary'>Login</Button> */}
             </ul>
             <div className='sm:hidden flex flex-1 justify-end items-center'>
                 <Image

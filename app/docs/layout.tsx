@@ -8,12 +8,10 @@ export default function DocumentationLayout({
     children: React.ReactNode;
 }) {
     return (
-        <div className='bg-primary w-full overflow-hidden'>
+        <div className='w-full overflow-hidden'>
             <div className='fixed inset-x-0 top-0 z-10 border-b border-gray-950/5 dark:border-white/10'>
-                <div className='bg-white dark:bg-gray-950'>
-                    <div className='flex h-14 items-center justify-between gap-8 px-4 sm:px-6'>
-                        <Navbar />
-                    </div>
+                <div className='flex h-14 items-center justify-between gap-8 px-4 sm:px-6'>
+                    <Navbar />
                 </div>
             </div>
             <div className='grid min-h-dvh grid-cols-1 grid-rows-[1fr_1px_auto_1px_auto] pt-24 lg:grid-cols-[var(--container-2xs)_2.5rem_minmax(0,1fr)_2.5rem] lg:pt-14 xl:grid-cols-[var(--container-2xs)_2.5rem_minmax(0,1fr)_2.5rem]'>
