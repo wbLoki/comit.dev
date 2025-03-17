@@ -25,7 +25,7 @@ export default {
     plugins: [
         heroui({
             defaultTheme: 'dark', // default theme from the themes object
-            defaultExtendTheme: 'dark', // default theme to extend on custom themes
+            // defaultExtendTheme: 'dark', // default theme to extend on custom themes
             themes: {
                 dark: {
                     layout: { disabledOpacity: '0.5' },
@@ -33,16 +33,16 @@ export default {
                         default: {
                             50: '#fdfdfd',
                             100: '#f9f9f9',
-                            200: '#f6f6f6',
+                            200: '#355369',
                             300: '#f3f3f3',
-                            400: '#efefef',
+                            400: '#607789',
                             500: '#ececec',
                             600: '#c3c3c3',
                             700: '#999999',
                             800: '#707070',
                             900: '#474747',
-                            foreground: '#000',
-                            DEFAULT: '#ececec',
+                            foreground: '#ececec',
+                            DEFAULT: '#d3d6db',
                         },
                         primary: {
                             50: '#e0e5e8',
