@@ -1,4 +1,3 @@
-// import { ButtonProps } from '@types';
 import { Button, ButtonProps } from '@heroui/react';
 
 type CustomButtonProps = ButtonProps & {
@@ -21,7 +20,7 @@ const StyledButton: React.FC<CustomButtonProps> = ({
             color={color}
             radius='md'
             size={size}
-            className={`${className} ${animated} ? ${animationStyle} : ''`}
+            className={`${className} ${animated ? animationStyle : ''}`}
         >
             {text}
         </Button>
