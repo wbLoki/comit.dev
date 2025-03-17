@@ -21,7 +21,9 @@ const Navbar: React.FC = () => {
                         {nav.title}
                     </Link>
                 ))}
-                <Button text='Login' size='md' />
+                <Link href='/login'>
+                    <Button text='Login' size='md' />
+                </Link>
             </ul>
             <div className='sm:hidden flex flex-1 justify-end items-center'>
                 <Image
@@ -45,7 +47,9 @@ const Navbar: React.FC = () => {
                                 <a href={`#${nav.id}`}>{nav.title}</a>
                             </li>
                         ))}
-                        <Button text='Login' size='md' />
+                        <Link href='/login'>
+                            <Button text='Login' size='md' />
+                        </Link>
                     </ul>
                 </div>
             </div>
