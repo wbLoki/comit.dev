@@ -2,9 +2,9 @@
 import { useState } from 'react';
 import { close, darkLogo, menu } from '@/public/assets';
 import { navLinks } from '@/constants';
+import Button from './Button';
 import Image from 'next/image';
 import Link from 'next/link';
-// import { Button } from '@heroui/react';
 
 const Navbar: React.FC = () => {
     const [toggle, setToggle] = useState(false);
@@ -15,15 +15,13 @@ const Navbar: React.FC = () => {
                 {navLinks.map((nav, index) => (
                     <Link
                         key={nav.id}
-                        className={`font-poppins font-normal cursor-pointer text-[16px] text-white ${
-                            index === navLinks.length - 1 ? 'mr-0' : 'mr-10'
-                        }`}
+                        className='font-poppins font-normal cursor-pointer text-[16px] text-white mr-10'
                         href={nav.href}
                     >
                         {nav.title}
                     </Link>
                 ))}
-                {/* <Button color='primary'>Login</Button> */}
+                <Button text='Login' />
             </ul>
             <div className='sm:hidden flex flex-1 justify-end items-center'>
                 <Image
