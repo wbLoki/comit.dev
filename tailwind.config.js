@@ -24,6 +24,8 @@ export default {
     darkMode: 'class',
     plugins: [
         heroui({
+            defaultTheme: 'dark', // default theme from the themes object
+            defaultExtendTheme: 'dark', // default theme to extend on custom themes
             themes: {
                 dark: {
                     layout: { disabledOpacity: '0.5' },
