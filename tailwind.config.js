@@ -69,7 +69,7 @@ export default {
                             700: '#9e482d',
                             800: '#733521',
                             900: '#492115',
-                            foreground: '#000',
+                            foreground: '#e7e7e7',
                             DEFAULT: '#f36f45',
                         },
                         background: '#00040f',

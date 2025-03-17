@@ -5,9 +5,12 @@ import { navLinks } from '@/constants';
 import Button from './Button';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useAuth } from '@hooks/useAuth';
+import UserMenu from './UserMenu';
 
 const Navbar: React.FC = () => {
     const [toggle, setToggle] = useState(false);
+    const { isAuthenticated } = useAuth();
     return (
         <nav className='w-full flex py-6 justify-between items-center navbar'>
             <Image src={darkLogo} alt='comit.dev' width={124} height={32} />
@@ -21,9 +24,13 @@ const Navbar: React.FC = () => {
                         {nav.title}
                     </Link>
                 ))}
-                <Link href='/login'>
-                    <Button text='Login' size='md' />
-                </Link>
+                {isAuthenticated ? (
+                    <UserMenu />
+                ) : (
+                    <Link href='/login'>
+                        <Button text='Login' size='md' />
+                    </Link>
+                )}
             </ul>
             <div className='sm:hidden flex flex-1 justify-end items-center'>
                 <Image
