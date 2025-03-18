@@ -76,6 +76,10 @@ export default {
                         foreground: '#ececec',
                         focus: '#006FEE',
                         overlay: '#ffffff',
+                        content2: {
+                            DEFAULT: '#733521',
+                            foreground: '#fff',
+                        },
                     },
                 },
             },
