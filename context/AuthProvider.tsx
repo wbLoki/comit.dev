@@ -8,14 +8,27 @@ import api from '@lib/api';
 
 export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     const [user, setUser] = useState<string | null>(null);
+    const [loading, setLoading] = useState<boolean>(true);
     const router = useRouter();
 
+    console.log('first log');
+
     useEffect(() => {
-        const savedToken = Cookies.get('access_token');
-        const savedUser = Cookies.get('username');
-        if (savedToken && savedUser) {
-            setUser(savedUser);
-        }
+        const fetchUser = async () => {
+            try {
+                const res = await fetch('/api/auth/state');
+                const data = await res.json();
+                if (res.ok) {
+                    setUser(data.user);
+                }
+            } catch (error) {
+                console.error('Error fetching user state:', error);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchUser();
     }, []);
 
     const login = async (username: string, password: string) => {
@@ -25,6 +38,8 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
                 password,
             });
 
+            console.log('Login response:', response.data); // Debugging log
+            console.log('token:', response.data.access_token); // Debugging log
             Cookies.set('access_token', response.data.access_token);
             Cookies.set('username', username);
 
@@ -53,7 +68,13 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
 
     return (
         <AuthContext.Provider
-            value={{ user, login, logout, isAuthenticated: !!user }}
+            value={{
+                user,
+                login,
+                logout,
+                isAuthenticated: !!user,
+                isLoading: loading,
+            }}
         >
             {children}
         </AuthContext.Provider>

@@ -5,6 +5,7 @@ export interface AuthState {
     login: (username: string, password: string) => Promise<void>;
     logout: () => void;
     isAuthenticated: boolean;
+    isLoading: boolean;
 }
 
 export const AuthContext = createContext<AuthState | undefined>(undefined);
