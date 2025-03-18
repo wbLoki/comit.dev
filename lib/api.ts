@@ -27,7 +27,6 @@ api.interceptors.response.use(
         if (error.response?.status === 401) {
             Cookies.remove('access_token');
             Cookies.remove('username');
-            // return Promise.reject(error.detail);
         }
         return Promise.reject(error);
     }
