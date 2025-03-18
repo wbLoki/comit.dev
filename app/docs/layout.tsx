@@ -1,5 +1,5 @@
-import { Navbar } from '@components';
-import Sidebar from '@components/Sidebar';
+import { Footer, Navbar, Sidebar } from '@components';
+import styles from '@styles/style';
 import Link from 'next/link';
 
 export default function DocumentationLayout({
@@ -44,6 +44,9 @@ export default function DocumentationLayout({
                     </ul>
                 </nav>
             </aside> */}
+            <div className={`${styles.boxWidth}`}>
+                <Footer />
+            </div>
         </div>
     );
 }

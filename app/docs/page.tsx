@@ -1,6 +1,5 @@
 'use client';
 import styles from '@/styles/style';
-import { Footer, Navbar } from '@/components';
 import Link from 'next/link';
 
 const Home: React.FC = () => {
@@ -38,9 +37,6 @@ const Home: React.FC = () => {
                 {/* <div className=''> */}
 
                 {/* </div> */}
-                <div className={`${styles.boxWidth}`}>
-                    <Footer />
-                </div>
             </div>
         </div>
     );

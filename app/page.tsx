@@ -21,7 +21,6 @@ const Home: React.FC = () => {
                     <div className={`${styles.boxWidth}`}>
                         {/* <Stats /> */}
                         <Business />
-                        {/* <CTA /> */}
                         <Footer />
                     </div>
                 </div>

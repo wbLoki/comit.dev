@@ -5,7 +5,7 @@ import { Button, Input, Checkbox, Link, Form, Image } from '@heroui/react';
 import { Icon } from '@iconify/react';
 import { useAuth } from '@hooks/useAuth';
 
-export default function LoginForm() {
+const LoginForm: React.FC = () => {
     const [isVisible, setIsVisible] = React.useState(false);
     const { login } = useAuth();
     const [username, setUsername] = useState('');
@@ -103,4 +103,6 @@ export default function LoginForm() {
             </div>
         </div>
     );
-}
+};
+
+export default LoginForm;
