@@ -32,9 +32,7 @@ export default function Kpi4({ data }: { data: KpiProps }) {
                 <Progress
                     aria-label='status'
                     className='mt-2 self-end'
-                    color={
-                        'success'
-                    }
+                    color='success'
                     value={value}
                 />
             </CardBody>
