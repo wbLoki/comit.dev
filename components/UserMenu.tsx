@@ -8,7 +8,7 @@ import {
 import { Icon } from '@iconify/react';
 import { useAuth } from '@hooks/useAuth';
 
-export default function UserMenu() {
+const UserMenu: React.FC = () => {
     const { user, logout } = useAuth();
     const iconClasses = 'text-xl pointer-events-none flex-shrink-0';
     return (
@@ -78,4 +78,6 @@ export default function UserMenu() {
             </DropdownMenu>
         </Dropdown>
     );
-}
+};
+
+export default UserMenu;

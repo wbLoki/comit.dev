@@ -7,8 +7,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useAuth } from '@hooks/useAuth';
 import { Skeleton } from '@heroui/react';
-import UserMenu from '@components/UserMenu';
-import StyledButton from '@components/Button';
+import { StyledButton, UserMenu } from '@components';
 
 const Navbar: React.FC = () => {
     const [toggle, setToggle] = useState(false);

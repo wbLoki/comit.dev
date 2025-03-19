@@ -1,8 +1,8 @@
 import styles, { layout } from '@/styles/style';
 import { features } from '@/constants';
-import Button from './Button';
 import Image from 'next/image';
 import { FeatredCardProps } from '@types';
+import { StyledButton } from '@components';
 
 const FeaturesCard: React.FC<FeatredCardProps> = ({
     icon,
@@ -46,7 +46,7 @@ const Business: React.FC = () => (
                 branch names, and provides coding assistance, making your
                 workflow more efficient and structured.
             </p>
-            <Button text='Get Started' animated className='mt-10' />
+            <StyledButton text='Get Started' animated className='mt-10' />
         </div>
         <div className={`${layout.sectionImg} flex-col items-start`}>
             {features.map((feature, index) => (
