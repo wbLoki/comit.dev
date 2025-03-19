@@ -17,10 +17,11 @@ export default function DocumentationLayout({
                 </div>
             </div>
             <div className='grid min-h-dvh grid-cols-1 grid-rows-[1fr_1px_auto_1px_auto] pt-24 lg:grid-cols-[var(--container-2xs)_2.5rem_minmax(0,1fr)_2.5rem] lg:pt-14 xl:grid-cols-[var(--container-2xs)_2.5rem_minmax(0,1fr)_2.5rem]'>
-                <Sidebar />
-                <div className='relative row-start-1 grid grid-cols-subgrid lg:col-start-3'>
-                    {children}
-                </div>
+                <Sidebar>
+                    <div className='relative row-start-1 grid grid-cols-subgrid lg:col-start-3'>
+                        {children}
+                    </div>
+                </Sidebar>
             </div>
             {/* <aside className='w-64 p-4 border-r'>
                 <nav>
