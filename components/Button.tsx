@@ -1,14 +1,30 @@
-import { ButtonProps } from '@types';
+import { Button, ButtonProps } from '@heroui/react';
 
-const Button: React.FC<ButtonProps> = ({ styles }) => {
+type CustomButtonProps = ButtonProps & {
+    animated?: boolean;
+    color?: 'primary' | 'secondary';
+    text: string;
+};
+
+const animationStyle = 'hover:translate-x-2 transition-all ease-linear';
+
+const StyledButton: React.FC<CustomButtonProps> = ({
+    animated,
+    className,
+    color = 'secondary',
+    size = 'lg',
+    text,
+}) => {
     return (
-        <button
-            type='button'
-            className={`${styles} py-4 px-6 bg-orange font-poppins font-medium text-[18px] text-primary outline-hidden rounded-[10px] hover:translate-x-2  transition-all ease-linear cursor-pointer`}
+        <Button
+            color={color}
+            radius='md'
+            size={size}
+            className={`${className} ${animated ? animationStyle : ''}`}
         >
-            Get Started
-        </button>
+            {text}
+        </Button>
     );
 };
 
-export default Button;
+export default StyledButton;

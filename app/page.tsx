@@ -1,25 +1,25 @@
 'use client';
 import styles from '@/styles/style';
-import { Business } from '@components/Business';
-import { Footer } from '@components/Footer';
-import { Hero } from '@components/Hero';
-import { Navbar } from '@components/Navbar';
+import { Hero, Business, Footer, Navbar } from '@/components';
 const Home: React.FC = () => {
     return (
         <>
             <div className='w-full overflow-hidden'>
                 <div className='flex flex-col min-h-screen'>
-                    {/* Hero Section */}
-                    <div className='flex-1 flex items-center justify-center bg-transparent'>
-                        <div className='max-w-7xl w-full'>
+                    <div className={`${styles.paddingX} ${styles.flexCenter}`}>
+                        <div className={`${styles.boxWidth}`}>
+                            <Navbar />
+                        </div>
+                    </div>
+                    <div className={`flex-1 items-center ${styles.flexStart}`}>
+                        <div className={`${styles.boxWidth}`}>
                             <Hero />
                         </div>
                     </div>
                 </div>
-
-                {/* Other Sections */}
-                <div className='px-6 flex justify-center'>
-                    <div className='max-w-7xl w-full'>
+                <div className={`${styles.paddingX} ${styles.flexStart}`}>
+                    <div className={`${styles.boxWidth}`}>
+                        {/* <Stats /> */}
                         <Business />
                         <Footer />
                     </div>

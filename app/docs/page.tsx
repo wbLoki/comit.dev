@@ -4,22 +4,39 @@ import Link from 'next/link';
 
 const Home: React.FC = () => {
     return (
-        <div className='flex flex-col flex-1 text-primary gap-8'>
-            <div className='flex flex-col gap-4'>
-                <h1 className='text-4xl'>Welcome to Comit Docs</h1>
-                <h3 className='text-lg text-dim-white'>
-                    Comit is an app that helps you stay accountable with your
-                    tasks. This documentation will guide you through the
-                    features and API.
-                </h3>
+        <div className='w-full overflow-hidden'>
+            <div className='flex flex-col min-h-screen'>
+                <div className={`${styles.paddingX} ${styles.flexCenter}`}>
+                    <div className={`${styles.boxWidth}`}></div>
+                </div>
+                <div
+                    className={`flex-1 items-center text-white ${styles.flexStart}`}
+                >
+                    <h1 className='text-3xl font-bold'>Comit Documentation</h1>
+                    <ul className='mt-4 space-y-2'>
+                        <Link href='/docs/sections/introduction'>
+                            Introduction
+                        </Link>
+                        <li>
+                            <Link href='/docs/sections/getting-started'>
+                                Getting Started
+                            </Link>
+                        </li>
+                        <li>
+                            <Link href='/docs/sections/api-reference'>
+                                API Reference
+                            </Link>
+                        </li>
+                        <li>
+                            <Link href='/docs/sections/faq'>FAQ</Link>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <div id='features' className='flex flex-col gap-4'>
-                <h2 className='text-3xl'>Features</h2>
-                <ul className='list-disc ml-8'>
-                    <li>Task tracking</li>
-                    <li>Friend accountability</li>
-                    <li>Progress insights</li>
-                </ul>
+            <div className={`${styles.paddingX} ${styles.flexStart}`}>
+                {/* <div className=''> */}
+
+                {/* </div> */}
             </div>
         </div>
     );
