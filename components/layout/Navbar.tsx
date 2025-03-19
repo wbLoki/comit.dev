@@ -13,8 +13,6 @@ const Navbar: React.FC = () => {
     const [toggle, setToggle] = useState(false);
     const { isAuthenticated, isLoading } = useAuth();
 
-    console.log('is auth working? ', isAuthenticated);
-
     return (
         <nav className='w-full flex py-6 justify-between items-center navbar'>
             <Image src={darkLogo} alt='comit.dev' width={124} height={32} />

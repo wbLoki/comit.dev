@@ -11,8 +11,6 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     const [loading, setLoading] = useState<boolean>(true);
     const router = useRouter();
 
-    console.log('first log');
-
     useEffect(() => {
         const fetchUser = async () => {
             try {
@@ -73,6 +71,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
             const response = await api.post('/auth/register', {
                 username,
                 password,
+                email,
             });
 
             return response.data.message;
