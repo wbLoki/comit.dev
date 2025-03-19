@@ -1,13 +1,14 @@
 'use client';
+
 import { useState } from 'react';
 import { close, darkLogo, menu } from '@/public/assets';
 import { navLinks } from '@/constants';
-import Button from './Button';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useAuth } from '@hooks/useAuth';
-import UserMenu from './UserMenu';
 import { Skeleton } from '@heroui/react';
+import UserMenu from '@components/UserMenu';
+import StyledButton from '@components/Button';
 
 const Navbar: React.FC = () => {
     const [toggle, setToggle] = useState(false);
@@ -36,7 +37,7 @@ const Navbar: React.FC = () => {
                         <UserMenu />
                     ) : (
                         <Link href='/login'>
-                            <Button text='Login' size='md' />
+                            <StyledButton text='Login' size='md' />
                         </Link>
                     )}
                 </Skeleton>
@@ -73,7 +74,7 @@ const Navbar: React.FC = () => {
                                 <UserMenu />
                             ) : (
                                 <Link href='/login'>
-                                    <Button text='Login' size='md' />
+                                    <StyledButton text='Login' size='md' />
                                 </Link>
                             )}
                         </Skeleton>
