@@ -8,6 +8,7 @@ import api from '@lib/api';
 
 export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     const [user, setUser] = useState<string | null>(null);
+    const [token, setToken] = useState<string | null>(null);
     const [loading, setLoading] = useState<boolean>(true);
     const router = useRouter();
 
@@ -20,6 +21,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
                 const data = await res.json();
                 if (res.ok) {
                     setUser(data.user);
+                    fetchTokens();
                 }
             } catch (error) {
                 console.error('Error fetching user state:', error);
@@ -28,12 +30,21 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
             }
         };
 
+        const fetchTokens = async () => {
+            try {
+                const response = await api.get('tokens/me');
+                setToken(response.data.token);
+            } catch (error) {
+                console.error('Error fetching token:', error);
+            }
+        };
+
         fetchUser();
     }, []);
 
     const login = async (username: string, password: string) => {
         try {
-            const response = await api.post('/auth/login', {
+            const response = await api.post('auth/login', {
                 username,
                 password,
             });
@@ -70,6 +81,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
         <AuthContext.Provider
             value={{
                 user,
+                token,
                 login,
                 logout,
                 isAuthenticated: !!user,
