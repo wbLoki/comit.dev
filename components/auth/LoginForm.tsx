@@ -96,7 +96,7 @@ const LoginForm: React.FC = () => {
                     </Button>
                 </Form>
                 <p className='text-center text-small'>
-                    <Link href='#' size='sm' className='text-default'>
+                    <Link href='/register' className='text-default'>
                         Create an account
                     </Link>
                 </p>
