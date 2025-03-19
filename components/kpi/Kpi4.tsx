@@ -33,11 +33,7 @@ export default function Kpi4({ data }: { data: KpiProps }) {
                     aria-label='status'
                     className='mt-2 self-end'
                     color={
-                        status === 'good'
-                            ? 'success'
-                            : status === 'warn'
-                            ? 'warning'
-                            : 'danger'
+                        'success'
                     }
                     value={value}
                 />
