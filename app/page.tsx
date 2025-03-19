@@ -1,4 +1,5 @@
 'use client';
+
 import styles from '@/styles/style';
 import { Hero, Business, Footer, Navbar } from '@/components';
 const Home: React.FC = () => {

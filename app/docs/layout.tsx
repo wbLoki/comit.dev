@@ -1,3 +1,5 @@
+'use client';
+
 import { Footer, Navbar, Sidebar } from '@components';
 import styles from '@styles/style';
 import Link from 'next/link';
