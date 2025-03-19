@@ -1,6 +1,5 @@
 import styles from '@/styles/style';
 import { terminal } from '@/public/assets';
-import GetStarted from './GetStarted';
 import Image from 'next/image';
 
 const Hero: React.FC = () => (

@@ -34,7 +34,7 @@ const FeaturesCard: React.FC<FeatredCardProps> = ({
         </div>
     </div>
 );
-export const Business: React.FC = () => (
+const Business: React.FC = () => (
     <section id='features' className={`${layout.section}`}>
         <div className={layout.sectionInfo}>
             <h2 className={styles.heading2}>
@@ -55,3 +55,5 @@ export const Business: React.FC = () => (
         </div>
     </section>
 );
+
+export default Business;
