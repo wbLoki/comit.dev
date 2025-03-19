@@ -65,8 +65,8 @@ const rows = [
 ];
 
 export default function Page() {
-    const { user } = useAuth();
-    const token = '23412324ER3214325242E2';
+    const { user, token } = useAuth();
+    // const token = '23412324ER3214325242E2';
 
     return (
         <div className='flex flex-col w-full p-6 md:p-10 gap-4 lg:gap-8'>
