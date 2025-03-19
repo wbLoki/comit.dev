@@ -38,8 +38,6 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
                 password,
             });
 
-            console.log('Login response:', response.data); // Debugging log
-            console.log('token:', response.data.access_token); // Debugging log
             Cookies.set('access_token', response.data.access_token);
             Cookies.set('username', username);
 
@@ -66,12 +64,33 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
         router.push('/');
     };
 
+    const register = async (
+        username: string,
+        password: string,
+        email: string
+    ) => {
+        try {
+            const response = await api.post('/auth/register', {
+                username,
+                password,
+            });
+
+            return response.data.message;
+        } catch (error: any) {
+            throw (
+                error.response?.data?.detail ||
+                'Unknown error occured while registering.'
+            );
+        }
+    };
+
     return (
         <AuthContext.Provider
             value={{
                 user,
                 login,
                 logout,
+                register,
                 isAuthenticated: !!user,
                 isLoading: loading,
             }}
