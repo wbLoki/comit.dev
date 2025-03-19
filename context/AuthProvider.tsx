@@ -14,32 +14,20 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
 
     console.log('first log');
 
-    useEffect(() => {
-        const fetchUser = async () => {
+    useEffect(() => {        
+        const fetchTokens = async () => {
             try {
-                const res = await fetch('/api/auth/state');
-                const data = await res.json();
-                if (res.ok) {
-                    setUser(data.user);
-                    fetchTokens();
-                }
+                const response = await api.get("users/me/")
+                setUser(response.data.username);
+                setToken(response.data.tokens[0].token);
             } catch (error) {
-                console.error('Error fetching user state:', error);
+                console.error('Error fetching token:', error);
             } finally {
                 setLoading(false);
             }
         };
-
-        const fetchTokens = async () => {
-            try {
-                const response = await api.get('tokens/me');
-                setToken(response.data.token);
-            } catch (error) {
-                console.error('Error fetching token:', error);
-            }
-        };
-
-        fetchUser();
+        
+        fetchTokens();
     }, []);
 
     const login = async (username: string, password: string) => {
