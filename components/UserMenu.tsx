@@ -8,7 +8,7 @@ import {
 import { Icon } from '@iconify/react';
 import { useAuth } from '@hooks/useAuth';
 
-export default function UserMenu() {
+const UserMenu: React.FC = () => {
     const { user, logout } = useAuth();
     const iconClasses = 'text-xl pointer-events-none flex-shrink-0';
     return (
@@ -31,6 +31,7 @@ export default function UserMenu() {
                 <DropdownItem
                     color='primary'
                     key='dashboard'
+                    href='/dashboard'
                     endContent={
                         <Icon
                             icon='material-symbols:dashboard-rounded'
@@ -43,6 +44,7 @@ export default function UserMenu() {
                 <DropdownItem
                     color='primary'
                     key='chats'
+                    href='/chats'
                     endContent={
                         <Icon
                             icon='material-symbols:chat-rounded'
@@ -55,6 +57,7 @@ export default function UserMenu() {
                 <DropdownItem
                     color='primary'
                     key='settings'
+                    href='/settings'
                     endContent={
                         <Icon
                             icon='iconamoon:settings-fill'
@@ -78,4 +81,6 @@ export default function UserMenu() {
             </DropdownMenu>
         </Dropdown>
     );
-}
+};
+
+export default UserMenu;
