@@ -1,9 +1,9 @@
-import Navbar from './Navbar';
 import Business from './Business';
-import LoginForm from './LoginForm';
-import Sidebar from './Sidebar';
-import Stats from './Stats';
 import Footer from './Footer';
 import Hero from './Hero';
+import LoginForm from './LoginForm';
+import Navbar from './Navbar';
+import Sidebar from './Sidebar';
+import Stats from './Stats';
 
-export { Navbar, Business, LoginForm, Sidebar, Stats, Footer, Hero };
+export { Business, Footer, Hero, LoginForm, Navbar, Sidebar, Stats };
