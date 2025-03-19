@@ -2,7 +2,6 @@ import styles from '@/styles/style';
 import { darkLogo } from '@/public/assets';
 import { footerLink, socialMedia } from '@/constants';
 import Image from 'next/image';
-
 const Footer: React.FC = () => (
     <section className={`${styles.flexCenter} ${styles.paddingY} flex-col`}>
         <div className={`${styles.flexCenter} mb-8 w-full`}>
