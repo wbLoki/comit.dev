@@ -88,7 +88,7 @@ export default function Page() {
           <Snippet className="text-default-foreground" size="sm" hideSymbol>
             {token}
           </Snippet>
-          <Tooltip placement="bottom" content="I am a tooltip">
+          <Tooltip placement="bottom" content={`comit login ${token}`}>
             <span className="text-sm text-right mt-2 cursor-pointer">
               How to use ?
             </span>
