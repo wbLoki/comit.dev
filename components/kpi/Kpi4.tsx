@@ -4,10 +4,11 @@ import { Icon } from '@iconify/react';
 type KpiProps = {
     title: string;
     value: number;
+    percentage: number;
 };
 
 export default function Kpi4({ data }: { data: KpiProps }) {
-    const { title, value } = data;
+    const { title, value, percentage } = data;
     return (
         <Card className='border p-4 border-default-100'>
             <CardBody>
@@ -33,7 +34,7 @@ export default function Kpi4({ data }: { data: KpiProps }) {
                     aria-label='status'
                     className='mt-2 self-end'
                     color='success'
-                    value={value}
+                    value={percentage}
                 />
             </CardBody>
         </Card>
