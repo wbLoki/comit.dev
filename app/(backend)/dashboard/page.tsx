@@ -70,11 +70,13 @@ export default function Page() {
   const { user, token } = useAuth();
   const [nTokens, setNTokens] = useState<number>(0);
   const [nQueries, setNQueries] = useState<number>(0);
+  const [lastWeekUsage, setLastWeekUsage] = useState<number[]>([]);
   useEffect(() => {
     (async () => {
       const response = await api.get("/transactions/");
       setNTokens(response.data.meta.total_tokens);
-      setNQueries(response.data.meta.count);
+      setNQueries(response.data.meta.usage_count);
+      setLastWeekUsage(response.data.meta.usage_days)
     })();
   }, []);
 
@@ -100,14 +102,14 @@ export default function Page() {
           data={{
             title: "Usage graph per time",
             value: nQueries,
-            chart: [24, 12, 4, 15, 8, 35],
+            chart: lastWeekUsage,
           }}
         />
         <Kpi4
           data={{
             title: "Tokens usage graph",
             value: nTokens,
-            percentage: (nTokens / 10e6) * 10e2,
+            percentage: (nTokens / 10e5) * 10e2,
           }}
         />
       </div>
