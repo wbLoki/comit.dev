@@ -1,0 +1,76 @@
+---
+title: Usage
+description: This document will guide you through the usage of Comit. It will cover basic and advanced usage of the tool, as well as some of the more complex features of the tool.
+---
+
+## Usage
+
+### Generating a Commit Message
+
+To generate a commit message, ensure your changes are staged, then run the following command:
+
+```bash
+comit
+```
+
+This command will run git ``diff --staged``, send the diff to your selected AI agent (you can choose or change the agent in the [dashboard](https://comit.dev/dashboard)), and generate several commit message suggestions for you formatted according to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
+
+
+A sample output might look like:
+
+```bash
+Use the arrow keys to navigate: ↓ ↑ → ←
+? Select commit message:
+  > Refresh
+    feat: add pagination support to /users endpoint
+    fix: resolve 500 error when POST /login is called without payload
+    chore: refactor API route handlers for better modularity
+    docs: update API reference with new pagination and auth examples
+```
+
+### Live Chat with Your Selected Agent
+Start a live conversation with your preferred AI assistant:
+```bash
+comit live
+```
+You'll be prompted to chat and can ask for code, advice, or assistance:
+```bash
+give a function that returns the sum of two numbers in python
+
+def sum_two_numbers(a, b):
+    return a + b
+
+> now in rust
+
+
+fn sum(a: i32, b: i32) -> i32 {
+a + b
+}
+```
+
+### Generate a Branch Name
+Automatically generate a branch name based on a description:
+```bash
+comit -b "Add a New Feature to the User Profile Page"
+# output
+# feature/add-new-feature-user-profile-page
+# bugfix/save-button-not-working-settings-page
+```
+
+### Send a Prompt
+Use a one-off prompt without entering chat mode:
+```bash
+comit -c "what is the meaning of life"
+```
+
+### Update Comit
+We’re constantly shipping improvements. To stay up to date, run:
+```bash
+comit update
+```
+
+### Help 
+To see all available commands and options:
+```
+comit help
+```

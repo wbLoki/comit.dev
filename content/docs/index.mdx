@@ -1,0 +1,41 @@
+---
+title: Installation
+description: Comit is an AI-powered tool for generating meaningful commit messages and providing coding assistance. It streamlines the development workflow by offering relevant code snippets and auto-generating commit messages.
+---
+
+## Step 1: Download the Executable
+### Supported Platforms
+
+| Platform | Link |
+| --- | --- |
+| Windows | [Download](https://api.comit.dev/release) |
+| Mac | [Download](https://api.comit.dev/release) |
+| Linux | [Download](https://api.comit.dev/release) |
+
+## Step 2: Add Comit to Your PATH
+After downloading, add the executable to your system's `PATH`. To verify the installation, run:
+
+```bash
+comit --version
+```
+If successfully installed, this will display the current version of Comit.
+
+## Step 3: Generate a Commit Message
+To generate a commit message, simply run:
+
+```bash
+comit
+```
+Make sure your changes are staged before running the command. Comit will analyze your staged changes and suggest a list of commit messages. 
+
+For example:
+```bash
+Use the arrow keys to navigate: ↓ ↑ → ←
+? Select commit message:
+  > Refresh
+    feat: add pagination support to /users endpoint
+    fix: resolve 500 error when POST /login is called without payload
+    chore: refactor API route handlers for better modularity
+    docs: update API reference with new pagination and auth examples
+```
+Choose the most appropriate message, and you're ready to commit!
