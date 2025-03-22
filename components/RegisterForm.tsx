@@ -164,7 +164,7 @@ export default function RegisterForm() {
         </div>
         <p className="text-center text-small">
           Already have an account?&nbsp;
-          <Link href="#" className="text-default" size="sm">
+          <Link href="/login" className="text-default" size="sm">
             Log In
           </Link>
         </p>
