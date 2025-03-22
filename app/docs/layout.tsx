@@ -1,55 +1,39 @@
-'use client';
+import type { ReactNode } from "react";
+import { DocsLayout } from "fumadocs-ui/layouts/docs";
+import { source } from "@lib/source";
+import type { BaseLayoutProps } from "fumadocs-ui/layouts/shared";
+import { RootProvider } from "fumadocs-ui/provider";
+import Image from "next/image";
 
-import { Footer, Navbar, Sidebar } from '@components';
-import styles from '@styles/style';
-import Link from 'next/link';
+const baseOptions: BaseLayoutProps = {
+  nav: {
+    title: (
+      <Image src="/assets/icons/logo-dark.png" alt="logo" width={124} height={32} />
+    ),
+  },
+  links: [
+    {
+      text: "Documentation",
+      url: "/docs",
+      active: "nested-url",
+    },
+  ],
+};
 
-export default function DocumentationLayout({
-    children,
+export default function Layout({
+  children,
 }: {
-    children: React.ReactNode;
-}) {
-    return (
-        <div className='w-full overflow-hidden'>
-            <div className='fixed inset-x-0 top-0 z-10 border-b border-gray-950/5 dark:border-white/10'>
-                <div className='flex h-14 items-center justify-between gap-8 px-4 sm:px-6'>
-                    <Navbar />
-                </div>
-            </div>
-            <div className='grid min-h-dvh grid-cols-1 grid-rows-[1fr_1px_auto_1px_auto] pt-24 lg:grid-cols-[var(--container-2xs)_2.5rem_minmax(0,1fr)_2.5rem] lg:pt-14 xl:grid-cols-[var(--container-2xs)_2.5rem_minmax(0,1fr)_2.5rem]'>
-                <Sidebar>
-                    <div className='relative row-start-1 grid grid-cols-subgrid lg:col-start-3'>
-                        {children}
-                    </div>
-                </Sidebar>
-            </div>
-            {/* <aside className='w-64 p-4 border-r'>
-                <nav>
-                    <ul>
-                        <li>
-                            <Link href='/docs/sections/introduction'>
-                                Introduction
-                            </Link>
-                        </li>
-                        <li>
-                            <Link href='/docs/sections/getting-started'>
-                                Getting Started
-                            </Link>
-                        </li>
-                        <li>
-                            <Link href='/docs/sections/api-reference'>
-                                API Reference
-                            </Link>
-                        </li>
-                        <li>
-                            <Link href='/docs/sections/faq'>FAQ</Link>
-                        </li>
-                    </ul>
-                </nav>
-            </aside> */}
-            <div className={`${styles.boxWidth}`}>
-                <Footer />
-            </div>
-        </div>
-    );
+  children: ReactNode;
+}): React.ReactElement {
+  return (
+    <html lang="en" suppressHydrationWarning>
+      <body className="flex flex-col min-h-screen">
+        <RootProvider>
+          <DocsLayout tree={source.pageTree} {...baseOptions}>
+            {children}
+          </DocsLayout>
+        </RootProvider>
+      </body>
+    </html>
+  );
 }

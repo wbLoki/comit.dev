@@ -1,11 +1,12 @@
 'use client';
 
-import { Button, Image, Link } from '@heroui/react';
+import { Button, Link } from '@heroui/react';
 import { FC, ReactNode } from '@node_modules/@types/react';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 import { Icon } from '@iconify/react';
 import { useAuth } from '@hooks/useAuth';
+import Image from 'next/image';
 
 interface SidebarProps {
     children: ReactNode;
@@ -38,6 +39,16 @@ const Sidebar: FC<SidebarProps> = ({ children }) => {
                 />
             ),
             href: '#',
+        },
+        {
+            label: 'Docs',
+            icon: (
+                <Icon
+                    icon='tabler:file-description'
+                    className={iconClasses}
+                />
+            ),
+            href: '/docs',
         },
         {
             label: 'settings',
@@ -73,6 +84,9 @@ const Sidebar: FC<SidebarProps> = ({ children }) => {
                             <Image
                                 src='/assets/icons/logo-mobile-dark.png'
                                 className='h-8 w-full'
+                                alt='comit.dev'
+                                width={32}
+                                height={32}
                             />
                             <span>Comit.dev</span>
                         </div>

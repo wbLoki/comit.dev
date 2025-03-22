@@ -71,43 +71,43 @@ export const footerLink = {
     links: [
         {
             name: 'How it Works',
-            link: 'https://www.comit.dev/how-it-works/',
+            link: '/docs',
         },
         {
             name: 'Help',
-            link: 'https://www.comit.dev/help-center/',
+            link: '/docs',
         },
         {
             name: 'Terms & Services',
-            link: 'https://www.comit.dev/terms-and-services/',
+            link: '/docs',
         },
     ],
 };
 
 export const socialMedia = [
-    {
-        id: 'social-media-1',
-        icon: instagram,
-        link: 'https://www.instagram.com/',
-    },
-    {
-        id: 'social-media-2',
-        icon: facebook,
-        link: 'https://www.facebook.com/',
-    },
+    // {
+    //     id: 'social-media-1',
+    //     icon: instagram,
+    //     link: 'https://www.instagram.com/',
+    // },
+    // {
+    //     id: 'social-media-2',
+    //     icon: facebook,
+    //     link: 'https://www.facebook.com/',
+    // },
     {
         id: 'social-media-3',
         icon: twitter,
-        link: 'https://www.twitter.com/',
+        link: 'https://x.com/issamoxix',
     },
-    {
-        id: 'social-media-4',
-        icon: linkedin,
-        link: 'https://www.linkedin.com/',
-    },
+    // {
+    //     id: 'social-media-4',
+    //     icon: linkedin,
+    //     link: 'https://www.linkedin.com/',
+    // },
     {
         id: 'social-media-5',
         icon: github,
-        link: 'https://www.github.com/',
+        link: 'https://github.com/issamoxix/Comit',
     },
 ];
