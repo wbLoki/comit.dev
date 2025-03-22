@@ -40,6 +40,16 @@ const Sidebar: FC<SidebarProps> = ({ children }) => {
             href: '#',
         },
         {
+            label: 'Docs',
+            icon: (
+                <Icon
+                    icon='tabler:file-description'
+                    className={iconClasses}
+                />
+            ),
+            href: '/docs',
+        },
+        {
             label: 'settings',
             icon: (
                 <Icon icon='iconamoon:settings-fill' className={iconClasses} />
