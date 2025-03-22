@@ -1,5 +1,6 @@
 import { heroui } from '@heroui/react';
 import typography from '@tailwindcss/typography';
+import { createPreset } from 'fumadocs-ui/tailwind-plugin';
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -9,6 +10,10 @@ export default {
         './app/**/*.{js,ts,jsx,tsx,mdx}',
         './styles/**/*.{js,jsx,ts,tsx}',
         './node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}',
+        './node_modules/fumadocs-ui/dist/**/*.js',
+    ],
+    presets: [
+        createPreset()
     ],
     theme: {
         extend: {},
@@ -84,6 +89,6 @@ export default {
                 },
             },
         }),
-        typography,
+        // typography,
     ],
 };
