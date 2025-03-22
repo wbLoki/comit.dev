@@ -10,7 +10,7 @@ export const metadata = {
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
     return (
         <html className='dark' lang='en'>
-            <body>
+            <body className='dark:bg-background'>
                 <Providers>{children}</Providers>
             </body>
         </html>
