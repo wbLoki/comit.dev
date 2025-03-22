@@ -71,15 +71,15 @@ export const footerLink = {
     links: [
         {
             name: 'How it Works',
-            link: 'https://www.comit.dev/how-it-works/',
+            link: '/docs',
         },
         {
             name: 'Help',
-            link: 'https://www.comit.dev/help-center/',
+            link: '/docs',
         },
         {
             name: 'Terms & Services',
-            link: 'https://www.comit.dev/terms-and-services/',
+            link: '/docs',
         },
     ],
 };
