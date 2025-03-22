@@ -24,11 +24,9 @@ api.interceptors.request.use(
 api.interceptors.response.use(
     (response) => response,
     (error) => {
-        if (error.response?.status === 401) {
-            Cookies.remove('access_token');
-            Cookies.remove('username');
+        if (error.response?.status < 500) {
+            return Promise.resolve(error.response);
         }
-        return Promise.reject(error);
     }
 );
 

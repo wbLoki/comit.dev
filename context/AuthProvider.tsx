@@ -16,6 +16,9 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     const fetchTokens = async () => {
       try {
         const response = await api.get("users/me/");
+        if (response.status !== 200){
+          return
+        }
         setUser(response.data.username);
         setToken(response.data.tokens[0].token);
       } catch (error) {
@@ -28,6 +31,29 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     fetchTokens();
   }, []);
 
+  const register = async (username: string, password: string, email: string, confirmPassword: string) => {
+    try {
+      const response = await api.post("auth/register", {
+        username,
+        password,
+        email,
+        confirmPassword,
+      });
+      if (response.status !== 200) {
+        if (response.data.detail){
+          throw new Error(response.data.detail);
+        }
+        throw new Error("Registration failed");
+      }
+      router.push("/login");
+    } catch (error: any) {
+      if (error.status === 400) {
+        throw error.response?.data?.detail || "Invalid username or password";
+      }
+      throw error;
+    }
+  };
+
   const login = async (username: string, password: string) => {
     try {
       const response = await api.post("auth/login", {
@@ -35,8 +61,6 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
         password,
       });
 
-      console.log("Login response:", response.data); // Debugging log
-      console.log("token:", response.data.access_token); // Debugging log
       Cookies.set("access_token", response.data.access_token);
       Cookies.set("username", username);
 
@@ -66,6 +90,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
         logout,
         isAuthenticated: !!user,
         isLoading: loading,
+        register,
       }}
     >
       {children}
