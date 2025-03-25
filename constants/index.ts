@@ -98,7 +98,7 @@ export const socialMedia = [
     {
         id: 'social-media-3',
         icon: twitter,
-        link: 'https://x.com/issamoxix',
+        link: 'https://x.com/ComitDev',
     },
     // {
     //     id: 'social-media-4',
