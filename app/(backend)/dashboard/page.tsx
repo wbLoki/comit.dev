@@ -14,6 +14,7 @@ import {
 } from "@heroui/react";
 import { useAuth } from "@hooks/useAuth";
 import api from "@lib/api";
+import { getChatTable } from "@requests/getChatTable";
 import { useEffect, useState } from "react";
 
 const columns = [
@@ -22,47 +23,16 @@ const columns = [
     label: "Id",
   },
   {
-    key: "query",
+    key: "messages",
     label: "Query",
   },
   {
-    key: "lenght",
+    key: "chat_length",
     label: "Chat length",
   },
   {
-    key: "date",
+    key: "timestamp",
     label: "Date",
-  },
-];
-
-const rows = [
-  {
-    key: "1",
-    id: 2,
-    query: "give me css for this",
-    lenght: 64,
-    date: "2022-03-24",
-  },
-  {
-    key: "2",
-    id: 3,
-    query: "how to make a homemade pizza",
-    lenght: 48,
-    date: "2022-03-25",
-  },
-  {
-    key: "3",
-    id: 4,
-    query: "how to make a cupcake",
-    lenght: 32,
-    date: "2022-03-26",
-  },
-  {
-    key: "4",
-    id: 5,
-    query: "how to make a chocolate soufflé",
-    lenght: 40,
-    date: "2022-03-27",
   },
 ];
 
@@ -71,12 +41,20 @@ export default function Page() {
   const [nTokens, setNTokens] = useState<number>(0);
   const [nQueries, setNQueries] = useState<number>(0);
   const [lastWeekUsage, setLastWeekUsage] = useState<number[]>([]);
+  const [rows, setRows] = useState<any[]>([]);
   useEffect(() => {
     (async () => {
       const response = await api.get("/transactions/");
       setNTokens(response.data.meta.total_tokens);
       setNQueries(response.data.meta.usage_count);
-      setLastWeekUsage(response.data.meta.usage_days)
+      setLastWeekUsage(response.data.meta.usage_days);
+    })();
+  }, []);
+
+  useEffect(() => {
+    (async () => {
+      const response = await getChatTable()
+      setRows(response.data);
     })();
   }, []);
 
@@ -126,9 +104,12 @@ export default function Page() {
         <TableBody items={rows}>
           {(item) => (
             <TableRow key={item.key}>
-              {(columnKey) => (
-                <TableCell>{getKeyValue(item, columnKey)}</TableCell>
-              )}
+              {(columnKey) => 
+                {
+                item.timestamp = new Date(item.timestamp).toLocaleDateString(); 
+                if (item.id) item.id = item.id.split("_")[1]
+                return <TableCell>{getKeyValue(item, columnKey)}</TableCell>}
+              }
             </TableRow>
           )}
         </TableBody>
