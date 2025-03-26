@@ -58,7 +58,7 @@ const Navbar: React.FC = () => {
                                 key={nav.id}
                                 className='font-poppins font-normal cursor-pointer text-[16px] text-white mb-4'
                             >
-                                <a href={`#${nav.id}`}>{nav.title}</a>
+                                <a href={nav.href}>{nav.title}</a>
                             </li>
                         ))}
                         <Skeleton
