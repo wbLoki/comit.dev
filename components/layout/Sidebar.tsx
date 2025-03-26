@@ -52,16 +52,16 @@ const Sidebar: FC<SidebarProps> = ({ children }) => {
             icon: (
                 <Icon icon='iconamoon:settings-fill' className={iconClasses} />
             ),
-            href: '#',
+            href: '/settings',
         },
     ];
 
     return (
-        <div className='flex h-screen'>
+        <div className='flex h-screen w-full'>
             {/* Sidebar */}
             <div
-                className={`flex flex-col transition-all duration-300 bg-primary-900 ${
-                    isCollapsed ? 'w-18' : 'w-72'
+                className={`flex flex-col transition-all w-full duration-300 bg-primary-900 ${
+                    isCollapsed ? 'max-w-16' : 'max-w-72'
                 }`}
             >
                 {/* Sidebar Header */}
@@ -139,7 +139,7 @@ const Sidebar: FC<SidebarProps> = ({ children }) => {
             </div>
 
             {/* Main Content */}
-            <div className='flex-grow p-4'>{children}</div>
+            <div className='p-4 w-full'>{children}</div>
         </div>
     );
 };
