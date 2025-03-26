@@ -43,10 +43,7 @@ const Sidebar: FC<SidebarProps> = ({ children }) => {
         {
             label: 'Docs',
             icon: (
-                <Icon
-                    icon='tabler:file-description'
-                    className={iconClasses}
-                />
+                <Icon icon='tabler:file-description' className={iconClasses} />
             ),
             href: '/docs',
         },
@@ -101,6 +98,7 @@ const Sidebar: FC<SidebarProps> = ({ children }) => {
                             <Link
                                 key={index}
                                 href={href}
+                                isExternal={href === '/docs'}
                                 color={isActive ? 'secondary' : 'foreground'}
                                 className={`flex flex-1 items-center border-l-5 border-transparent capitalize gap-3 p-4 ${
                                     isActive
