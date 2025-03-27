@@ -30,7 +30,13 @@ const Comit = () => {
     const [selectedModel, setSelectedModel] = useState<string | null>(null);
     const [selectedVersion, setSelectedVersion] = useState<string | null>(null);
 
-    console.log(selectedModel);
+    const onSubmit = (e: any) => {
+        e.preventDefault();
+        const data = Object.fromEntries(new FormData(e.currentTarget));
+
+        // logic to update data
+    };
+
     return (
         <Form className='w-full max-w-lg gap-4' onSubmit={() => {}}>
             <Select
