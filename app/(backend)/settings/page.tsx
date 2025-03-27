@@ -16,21 +16,24 @@ const page = (props: Props) => {
                 </h2>
             </div>
 
-            <Tabs
-                color='secondary'
-                aria-label='Options'
-                size='md'
-                classNames={{
-                    tabList: 'bg-primary-700 w-full max-w-lg',
-                }}
-            >
-                <Tab key='account' title='Account'>
-                    <Account />
-                </Tab>
-                <Tab key='comit' title='Comit'>
-                    <Comit />
-                </Tab>
-            </Tabs>
+            <div className='w-full max-w-lg self-center'>
+                <Tabs
+                    color='secondary'
+                    aria-label='Options'
+                    size='md'
+                    classNames={{
+                        base: 'w-full',
+                        tabList: 'bg-primary-700 w-full max-w-lg',
+                    }}
+                >
+                    <Tab key='account' title='Account'>
+                        <Account />
+                    </Tab>
+                    <Tab key='comit' title='Comit'>
+                        <Comit />
+                    </Tab>
+                </Tabs>
+            </div>
         </div>
     );
 };
