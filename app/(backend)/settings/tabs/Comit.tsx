@@ -40,6 +40,7 @@ const Comit = () => {
     return (
         <Form className='w-full max-w-lg gap-4' onSubmit={() => {}}>
             <Select
+                isRequired
                 className='max-w-xs'
                 items={models}
                 color='default'
@@ -60,6 +61,7 @@ const Comit = () => {
 
             {/* Model version selection */}
             <Select
+                isRequired
                 className='max-w-xs'
                 items={selectedModel ? versions[selectedModel] || [] : []}
                 color='default'
