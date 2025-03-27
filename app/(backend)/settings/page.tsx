@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Tabs, Tab, Card, CardBody } from '@heroui/react';
+import { Tabs, Tab } from '@heroui/react';
 import { Account, Comit } from './tabs';
 
 type Props = {};
@@ -21,7 +21,7 @@ const page = (props: Props) => {
                 aria-label='Options'
                 size='md'
                 classNames={{
-                    tabList: 'bg-primary-700',
+                    tabList: 'bg-primary-700 w-full max-w-lg',
                 }}
             >
                 <Tab key='account' title='Account'>
