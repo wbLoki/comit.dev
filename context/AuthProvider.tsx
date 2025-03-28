@@ -69,7 +69,6 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
                 password,
             });
 
-            console.log(response.data.access_token);
             Cookies.set('access_token', response.data.access_token);
             Cookies.set('username', username);
 
