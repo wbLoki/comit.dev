@@ -139,7 +139,7 @@ const Sidebar: FC<SidebarProps> = ({ children }) => {
             </div>
 
             {/* Main Content */}
-            <div className='flex-grow p-4'>{children}</div>
+            <div className='flex-grow p-4 overflow-auto'>{children}</div>
         </div>
     );
 };
