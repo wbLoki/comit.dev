@@ -74,24 +74,9 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     Cookies.set("access_token", response.data.access_token);
     Cookies.set("username", username);
 
-
-            setUser(username);
-            router.push('/dashboard');
-        } catch (error: any) {
-            console.error(
-                'Login failed:',
-                error.response?.data?.detail || 'Error'
-            );
-            if (error.status === 401) {
-                throw (
-                    error.response?.data?.detail ||
-                    'Invalid username or password'
-                );
-            }
-        } finally {
-            await fetchTokens();
-        }
-    };
+    setUser(username);
+    router.push("/dashboard");
+  };
   const logout = () => {
     Cookies.remove("access_token");
     Cookies.remove("username");
