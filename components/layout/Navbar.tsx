@@ -21,6 +21,7 @@ const Navbar: React.FC = () => {
                         key={nav.id}
                         className='font-poppins font-normal cursor-pointer text-[16px] text-white mr-10'
                         href={nav.href}
+                        target='_blank'
                     >
                         {nav.title}
                     </Link>
@@ -58,7 +59,7 @@ const Navbar: React.FC = () => {
                                 key={nav.id}
                                 className='font-poppins font-normal cursor-pointer text-[16px] text-white mb-4'
                             >
-                                <a href={nav.href}>{nav.title}</a>
+                                <a href={nav.href} target='_blank'>{nav.title}</a>
                             </li>
                         ))}
                         <Skeleton
