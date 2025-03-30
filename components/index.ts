@@ -1,4 +1,5 @@
 import Business from './Business';
+import ChatPage from './chat/ChatPage';
 import Code from './Code';
 import Footer from './layout/Footer';
 import Hero from './Hero';
@@ -13,6 +14,7 @@ import UserMenu from './UserMenu';
 
 export {
     Business,
+    ChatPage,
     Code,
     Footer,
     Hero,

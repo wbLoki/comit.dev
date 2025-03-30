@@ -14,7 +14,7 @@ export default function Kpi3({ data }: { data: KpiProps }) {
         value,
     }));
     return (
-        <Card className='border border-default-100'>
+        <Card className='border border-default-100' fullWidth>
             <CardBody>
                 <div className='flex flex-nowrap justify-between'>
                     <div className='flex flex-col justify-between gap-y-2 p-4'>
