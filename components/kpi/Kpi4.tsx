@@ -3,7 +3,7 @@ import { Icon } from '@iconify/react';
 
 type KpiProps = {
     title: string;
-    value: number;
+    value: string;
     percentage: number;
 };
 
@@ -27,7 +27,7 @@ export default function Kpi4({ data }: { data: KpiProps }) {
                         <dt className='my-2 text-sm font-medium text-default-600'>
                             {title}
                         </dt>
-                        <dd className='text-3xl font-semibold'>{value}</dd>
+                        <dd className='text-2xl font-semibold'>{value} /300K</dd>
                     </div>
                 </div>
                 <Progress
