@@ -1,5 +1,3 @@
-import { ReactNode } from '@node_modules/@types/react';
-
 export interface FeatredCardProps {
     icon: string;
     title: string;
@@ -23,4 +21,23 @@ export interface Feature {
     icon: string;
     title: string;
     content: string;
+}
+
+export interface Chat {
+    id: string;
+    messages: string;
+    chat_length: number;
+    timestamp: number;
+}
+
+export interface MessageContent {
+    role: string;
+    content: { type: string; text: string }[];
+}
+
+export interface Message {
+    _id: string;
+    messages: MessageContent[];
+    timestamp: number;
+    userId: string;
 }
