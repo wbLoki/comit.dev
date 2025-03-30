@@ -1,5 +1,5 @@
 import styles from "@/styles/style";
-import { terminal } from "@/public/assets";
+import { newComit } from "@/public/assets";
 import Image from "next/image";
 import Button from "./Button";
 import Link from "next/link";
@@ -28,7 +28,7 @@ const Hero: React.FC = () => (
       </Link>
     </div>
     <div className={`${styles.flexCenter} flex-1 flex md:my-0 my-10 relative`}>
-      <Image src={terminal} alt="billings" className="relative z-[5]" />
+      <Image src={newComit} alt="billings" className="relative z-[5] border-[3px] border-secondary-400 rounded-md shadow-[0_35px_35px_rgba(0,0,0,0.25)]" />
       <div className="absolute z-[0] w-[40%] h-[35%] top-0 pink__gradient" />
       <div className="absolute z-[1] w-[80%] h-[80%] rounded-full bottom-40 white__gradient" />
       <div className="absolute z-[0] w-[50%] h-[50%] right-20 bottom-20 blue__gradient" />
