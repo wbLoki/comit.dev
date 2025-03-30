@@ -11,7 +11,9 @@ type ChatTable = {
   data: ChatData[];
 };
 
-export async function getChatTable(): Promise<ChatTable> {
-  const response = await api.get("/transactions/history/chat/titles");
+export async function getChatTable(limit: number = 10): Promise<ChatTable> {
+  const response = await api.get(
+    `/transactions/history/chat/titles?limit=${limit}`
+  );
   return response.data;
 }
