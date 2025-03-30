@@ -1,11 +1,18 @@
 import Script from "next/script";
 import "../styles/globals.css";
 import Providers from "./Providers";
+
 export const metadata = {
   title: "Comit",
 
   description:
     "An AI-powered tool for generating meaningful commit messages and providing coding assistance",
+  openGraph: {
+    title: "Comit",
+    images: ["/assets/new_comit.gif"],
+    url: "http://comit.dev/",
+    type: "website",
+  },
 };
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
