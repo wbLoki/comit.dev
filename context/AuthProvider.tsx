@@ -7,29 +7,47 @@ import Cookies from "js-cookie";
 import api from "@lib/api";
 
 export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
-    const [user, setUser] = useState<string | null>(null);
-    const [token, setToken] = useState<string | null>(null);
-    const [loading, setLoading] = useState<boolean>(false);
-    const router = useRouter();
+  const [user, setUser] = useState<string | null>(null);
+  const [token, setToken] = useState<string | null>(null);
+  const [loading, setLoading] = useState<boolean>(false);
+  const router = useRouter();
 
-    const fetchTokens = async () => {
-        try {
-            const response = await api.get('users/me/');
-            if (response.status !== 200) {
-                return;
-            }
-            setUser(response.data.username);
-            setToken(response.data.tokens[0].token);
-        } catch (error) {
-            console.error('Error fetching token:', error);
-        } finally {
-            setLoading(false);
-        }
-    };
+  const fetchTokens = async () => {
+    try {
+      const response = await api.get("users/me/");
+      if (response.status !== 200) {
+        return;
+      }
+      setUser(response.data.username);
+      setToken(response.data.tokens[0].token);
+    } catch (error) {
+      console.error("Error fetching token:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
 
-    useEffect(() => {
-        fetchTokens();
-    }, []);
+  useEffect(() => {
+    fetchTokens();
+  }, []);
+
+  const resetPassword = async (reset_token: string, password: string) => {
+    const response = await api.post(
+      `/auth/reset-password/?token=${reset_token}&new_password=${password}`
+    );
+    if (response.status !== 200) {
+      throw new Error(response.data.detail);
+    }
+    return response.data.message;
+  };
+
+  const forgetPassword = async (email: string) => {
+    const response = await api.post(`auth/forgot-password/?email=${email}`);
+    if (response.status !== 200) {
+      throw new Error(response.data.detail);
+    }
+    return response.data.message;
+  };
 
   const register = async (
     username: string,
@@ -94,6 +112,8 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
         isAuthenticated: !!user,
         isLoading: loading,
         register,
+        forgetPassword,
+        resetPassword,
       }}
     >
       {children}

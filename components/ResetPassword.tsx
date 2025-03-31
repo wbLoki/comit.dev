@@ -1,17 +1,20 @@
 "use client";
 
 import React from "react";
-import { Button, Input, Checkbox, Link, Divider } from "@heroui/react";
-import { Icon } from "@iconify/react";
+import { Button, Input, Link, Divider, Alert } from "@heroui/react";
 import ErrorMessage from "./ErrorMessage";
-import { useAuth } from "@hooks/useAuth";
 import Image from "next/image";
+import { useAuth } from "@hooks/useAuth";
+import { Icon } from "@iconify/react";
 
-export default function RegisterForm() {
+export default function ResetPassword({ token }: { token: string }) {
+  const [message, setMessage] = React.useState("");
   const [isVisible, setIsVisible] = React.useState(false);
+  const [loading, setLoading] = React.useState(false);
+  const [isMessageVisible, setMessageVisible] = React.useState(false);
   const [isConfirmVisible, setIsConfirmVisible] = React.useState(false);
   const [error, setError] = React.useState("");
-  const { register } = useAuth();
+  const { resetPassword } = useAuth();
 
   const toggleVisibility = () => setIsVisible(!isVisible);
   const toggleConfirmVisibility = () => setIsConfirmVisible(!isConfirmVisible);
@@ -22,8 +25,6 @@ export default function RegisterForm() {
     const formData = new FormData(e.currentTarget);
 
     const data = {
-      username: formData.get("username") as string,
-      email: formData.get("email") as string,
       password: formData.get("password") as string,
       confirmPassword: formData.get("confirmPassword") as string,
     };
@@ -32,23 +33,17 @@ export default function RegisterForm() {
       setError("Passwords do not match");
       return;
     }
-
     if (data.password.length < 8) {
       setError("Password must be at least 8 characters long");
       return;
     }
-    if (data.username.length < 5) {
-      setError("Username must be at least 5 characters long");
-      return;
-    }
 
     try {
-      await register(
-        data.username,
-        data.password,
-        data.email,
-        data.confirmPassword
-      );
+      setLoading(true);
+      const message = await resetPassword(token, data.password);
+      setMessage(message);
+      setMessageVisible(true);
+      setLoading(false);
     } catch (err: any) {
       setError(err.message || "Invalid username or password");
     }
@@ -69,33 +64,15 @@ export default function RegisterForm() {
         </div>
         <form className="flex flex-col gap-3" onSubmit={handleSubmit}>
           {error && <ErrorMessage data={{ message: error }} />}
+          <Alert
+            color="success"
+            description={<p>{message},<Link href="/login" className="text-secondary">you can now log in.</Link></p>}
+            isVisible={isMessageVisible}
+            title={"Success"}
+            variant="faded"
+            onClose={() => setMessageVisible(false)}
+          />
           <div className="flex flex-col">
-            <Input
-              isRequired
-              classNames={{
-                base: "-mb-[2px]",
-                inputWrapper:
-                  "rounded-b-none data-[hover=true]:z-10 group-data-[focus-visible=true]:z-10",
-              }}
-              label="Username"
-              name="username"
-              placeholder="Enter your username"
-              type="text"
-              variant="bordered"
-            />
-            <Input
-              isRequired
-              classNames={{
-                base: "-mb-[2px]",
-                inputWrapper:
-                  "rounded-none data-[hover=true]:z-10 group-data-[focus-visible=true]:z-10",
-              }}
-              label="Email Address"
-              name="email"
-              placeholder="Enter your email"
-              type="email"
-              variant="bordered"
-            />
             <Input
               isRequired
               classNames={{
@@ -151,18 +128,8 @@ export default function RegisterForm() {
               variant="bordered"
             />
           </div>
-          <Checkbox isRequired className="py-4 text-default" size="sm">
-            I agree with the&nbsp;
-            <Link className="relative z-[1]" href="#" size="sm">
-              Terms
-            </Link>
-            &nbsp; and&nbsp;
-            <Link className="relative z-[1]" href="#" size="sm">
-              Privacy Policy
-            </Link>
-          </Checkbox>
-          <Button color="primary" type="submit">
-            Sign Up
+          <Button color="primary" type="submit" isLoading={loading}>
+            Send Reset Link
           </Button>
         </form>
         <div className="flex items-center gap-4 py-2">
