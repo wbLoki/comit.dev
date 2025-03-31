@@ -13,6 +13,8 @@ export interface AuthState {
     email: string,
     confirmPassword: string
   ) => Promise<void>;
+  forgetPassword: (email: string) => Promise<string>;
+  resetPassword: (reset_token: string, password: string) => Promise<string>;
 }
 
 export const AuthContext = createContext<AuthState | undefined>(undefined);
