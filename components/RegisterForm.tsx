@@ -1,10 +1,11 @@
 "use client";
 
 import React from "react";
-import { Button, Input, Checkbox, Link, Divider, Image } from "@heroui/react";
+import { Button, Input, Checkbox, Link, Divider } from "@heroui/react";
 import { Icon } from "@iconify/react";
 import ErrorMessage from "./ErrorMessage";
 import { useAuth } from "@hooks/useAuth";
+import Image from "next/image";
 
 export default function RegisterForm() {
   const [isVisible, setIsVisible] = React.useState(false);
@@ -57,7 +58,14 @@ export default function RegisterForm() {
     <div className="flex h-full w-full items-center justify-center">
       <div className="flex w-full max-w-sm flex-col gap-4 rounded-large">
         <div className="flex flex-col items-center pb-6">
-          <Image src="assets/icons/logo-dark.png" alt="logo" />
+          <Link href="/" target="_blank">
+            <Image
+              src="/assets/icons/logo-dark.png"
+              alt="logo"
+              width={500}
+              height={500}
+            />
+          </Link>
         </div>
         <form className="flex flex-col gap-3" onSubmit={handleSubmit}>
           {error && <ErrorMessage data={{ message: error }} />}
